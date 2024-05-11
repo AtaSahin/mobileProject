@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import NavigationButton from '../../components/NavigationButton';
 import {styles} from './PaywallScreen.styles';
@@ -23,6 +29,13 @@ const PaywallScreen: React.FC<Props> = ({navigation}) => {
         <ImageBackground
           source={require('../../assets/images/paywallScreenImages/paywallBanner.png')}
           style={styles.image}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('HomePage')}
+            style={styles.closeIcon}>
+            <Image
+              source={require('../../assets/images/paywallScreenImages/closeButton.png')}
+            />
+          </TouchableOpacity>
           <Text style={styles.heading}>
             <Text style={{fontWeight: '900'}}>PlantApp </Text>
             Premium

@@ -56,4 +56,10 @@ export const styles = StyleSheet.create({
     width: '100%',
     left: -5,
   },
+  closeIcon: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    color: 'rgba(0, 0, 0, 0.4)',
+  },
 });

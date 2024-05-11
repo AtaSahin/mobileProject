@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   },
   selectedButton: {
     borderColor: 'rgba(40, 175, 110, 1)',
+    backgroundColor: 'rgba(40, 175, 110, 0.168)',
   },
   innerCircle: {
     width: 24,
