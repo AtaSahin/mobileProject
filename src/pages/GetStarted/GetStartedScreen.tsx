@@ -16,7 +16,7 @@ const GetStartedScreen: React.FC<Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/landingPageImages/landingBg.jpg')}
+        source={require('../../assets/images/landingScreenImages/landingBg.jpg')}
         style={styles.background}
       />
       <Text style={styles.heading}>
@@ -28,7 +28,7 @@ const GetStartedScreen: React.FC<Props> = ({navigation}) => {
       </Text>
       <View style={styles.imageContainer}>
         <Image
-          source={require('../../assets/images/landingPageImages/landingBanner.png')}
+          source={require('../../assets/images/landingScreenImages/landingBanner.png')}
           style={styles.image}
           resizeMode="contain"
         />
