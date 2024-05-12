@@ -97,11 +97,13 @@ const PaywallScreen: React.FC<Props> = ({navigation}) => {
         />
       </View>
 
-      <NavigationButton
-        title="Try free for 3 days"
-        navigation={navigation}
-        navigateTo="HomePage"
-      />
+      <View style={styles.buttonContainer}>
+        <NavigationButton
+          title="Try free for 3 days"
+          navigation={navigation}
+          navigateTo="HomePage"
+        />
+      </View>
     </View>
   );
 };

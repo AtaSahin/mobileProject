@@ -33,6 +33,7 @@ const GetStartedScreen: React.FC<Props> = ({navigation}) => {
           resizeMode="contain"
         />
       </View>
+
       <NavigationButton
         title="Get Started"
         navigation={navigation}

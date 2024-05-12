@@ -67,4 +67,10 @@ export const styles = StyleSheet.create({
     right: width * 0.05,
     color: 'rgba(0, 0, 0, 0.4)',
   },
+  buttonContainer: {
+    alignItems: 'center',
+    paddingBottom: 20,
+    top: height * 0.15,
+    right: width * 0.5,
+  },
 });

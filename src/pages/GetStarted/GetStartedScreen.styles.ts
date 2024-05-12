@@ -36,6 +36,7 @@ export const styles = StyleSheet.create({
     color: 'rgba(19, 35, 27, 0.7)',
     bottom: height * 0.05,
   },
+
   imageContainer: {
     flex: 1,
     justifyContent: 'center',

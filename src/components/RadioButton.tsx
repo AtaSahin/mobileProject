@@ -51,9 +51,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: width * 0.041,
     marginBottom: height * 0.02,
     borderRadius: height * 0.014,
-    borderWidth: 1.5,
+    borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    backgroundColor: 'transparent',
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
   },
   selectedButton: {
     borderColor: 'rgba(40, 175, 110, 1)',

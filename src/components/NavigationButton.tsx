@@ -1,3 +1,4 @@
+// NavigationButton.js
 import React from 'react';
 import {
   View,
@@ -7,22 +8,41 @@ import {
   Dimensions,
 } from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
+import {useDispatch} from 'react-redux'; // Import useDispatch hook
+import {changePage} from '../redux/actions/actions';
 
 type ButtonProps = {
   title: string;
   navigation: NavigationProp<any>;
   navigateTo: string;
+  onPress?: () => void; // Optional custom onPress handler
+  useRedux?: boolean;
+  pageNumber?: number; // Optional flag to enable Redux integration
 };
 
 const NavigationButton: React.FC<ButtonProps> = ({
   title,
   navigation,
   navigateTo,
+  onPress,
+  useRedux = false,
+  pageNumber,
 }) => {
+  const dispatch = useDispatch();
+
+  const handlePress = () => {
+    if (onPress) {
+      onPress();
+    } else {
+      navigation.navigate(navigateTo);
+      if (useRedux) {
+        dispatch(changePage(1));
+      }
+    }
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => navigation.navigate(navigateTo)}>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );

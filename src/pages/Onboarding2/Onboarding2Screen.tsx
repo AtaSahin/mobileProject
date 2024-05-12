@@ -3,6 +3,7 @@ import {View, Text, ImageBackground, Image} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import NavigationButton from '../../components/NavigationButton';
 import {styles} from './Onboarding2Screen.styles';
+import CarouselDots from '../../components/CarouselDots';
 
 type RootStackParamList = {
   Paywall: undefined;
@@ -32,6 +33,7 @@ const Onboarding2Screen: React.FC<Props> = ({navigation}) => {
           navigation={navigation}
           navigateTo="Paywall"
         />
+        <CarouselDots />
       </ImageBackground>
     </View>
   );
