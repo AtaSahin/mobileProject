@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 type BoxProps = {
   imageSource: any;
@@ -21,38 +23,40 @@ const Box: React.FC<BoxProps> = ({imageSource, heading, subheading}) => {
 
 const styles = StyleSheet.create({
   box: {
-    width: 156,
-    height: 130,
-    borderRadius: 14,
+    width: width * 0.35,
+    height: height * 0.15,
+    borderRadius: height * 0.014,
     backgroundColor: 'rgba(255, 255, 255, 0.08)',
     overflow: 'hidden',
-    marginRight: '3%',
+    marginRight: width * 0.03,
   },
   boxImage: {
     width: '25%',
-    height: '25%',
-    borderTopLeftRadius: 14,
-    borderTopRightRadius: 14,
+    height: '28%',
     position: 'absolute',
-    left: '5%',
     top: '10%',
+    left: '10%',
+    resizeMode: 'cover',
+    borderTopLeftRadius: height * 0.014,
+    borderTopRightRadius: height * 0.014,
   },
   textContainer: {
-    paddingHorizontal: 10,
-    paddingTop: 40,
+    paddingHorizontal: width * 0.01,
+    paddingTop: height * 0.07,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'flex-start',
+    left: '10%',
   },
   boxHeading: {
-    fontSize: 16,
+    fontSize: height * 0.02,
     fontWeight: 'bold',
     color: '#FFF',
     textAlign: 'center',
     fontFamily: 'Rubik',
   },
   boxSubheading: {
-    fontSize: 14,
+    fontSize: height * 0.015,
     fontWeight: '300',
     color: 'rgba(255, 255, 255, 0.7)',
     textAlign: 'center',

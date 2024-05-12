@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,33 +10,35 @@ export const styles = StyleSheet.create({
     backgroundColor: '#101e17',
   },
   heading: {
-    fontSize: 24,
+    fontSize: height * 0.04,
     fontWeight: '300',
     color: '#FFF',
-    marginTop: 20,
+    marginTop: height * 0.033,
     letterSpacing: 0.07,
-    top: '50%',
+    top: height * 0.26,
     textAlign: 'left',
-    left: '5%',
+    left: width * 0.1,
     fontFamily: 'Rubik',
   },
-
+  scrollContainer: {
+    flexDirection: 'row',
+  },
   description: {
-    fontSize: 20,
+    fontSize: height * 0.03,
     fontWeight: '300',
     color: 'rgba(255, 255, 255, 0.7);',
-    marginTop: 20,
+    marginTop: height * 0.033,
     letterSpacing: 0.07,
-    top: '45%',
+    top: height * 0.22,
     textAlign: 'left',
-    left: '5%',
+    left: width * 0.1,
   },
   imageContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    maxHeight: '60%',
+    maxHeight: height * 0.5,
   },
   image: {
     width: '100%',
@@ -45,21 +49,22 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     position: 'absolute',
     bottom: 0,
-    left: -5,
-    width: '100%',
-    paddingHorizontal: 20,
-    paddingBottom: 2,
+    top: height * 0.42,
+    left: width * 0.025,
+    width: width * 1,
+    height: height * 1,
+    paddingHorizontal: width * 0.05,
   },
   radioContainer: {
-    paddingHorizontal: 24,
-    marginTop: 16,
+    paddingHorizontal: width * 0.05,
+    marginTop: height * 0.1,
     width: '100%',
-    left: -5,
+    alignItems: 'center',
   },
   closeIcon: {
     position: 'absolute',
-    top: 20,
-    right: 20,
+    top: height * 0.033,
+    right: width * 0.05,
     color: 'rgba(0, 0, 0, 0.4)',
   },
 });

@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
 
 type ButtonProps = {
@@ -22,21 +28,23 @@ const NavigationButton: React.FC<ButtonProps> = ({
   );
 };
 
+const {width, height} = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: '10%',
-    left: 24,
-    width: '85%',
-    height: 56,
+    bottom: height * 0.1,
+    left: (width - width * 0.85) / 2,
+    width: width * 0.85,
+    height: height * 0.07,
     backgroundColor: '#28AF6E',
-    borderRadius: 12,
+    borderRadius: height * 0.02,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: height * 0.02,
     fontWeight: 'bold',
   },
 });

@@ -1,5 +1,7 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
+const {width, height} = Dimensions.get('window');
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -11,19 +13,19 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    width: width,
+    height: height,
   },
   heading: {
     fontFamily: 'Rubik',
-    fontSize: 28,
+    fontSize: width * 0.07,
     fontWeight: '600',
-    lineHeight: 33.18,
+    lineHeight: height * 0.091,
     letterSpacing: 0.07,
     textAlign: 'left',
     color: '#13231B',
-    left: '8%',
-    paddingTop: '5%',
+    left: width * 0.08,
+    paddingTop: height * 0.05,
   },
   imageContainer: {
     flex: 1,
@@ -31,7 +33,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     maxHeight: '100%',
-    marginBottom: 20,
+    marginBottom: height * 0.027,
   },
   image: {
     flex: 1,

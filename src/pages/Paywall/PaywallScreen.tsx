@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Image,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import NavigationButton from '../../components/NavigationButton';
@@ -19,6 +20,26 @@ type RootStackParamList = {
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'HomePage'>;
 };
+const data = [
+  {
+    key: '1',
+    imageSource: require('../../assets/images/paywallScreenImages/paywallIcon1.png'),
+    heading: 'Unlimited',
+    subheading: 'Plant Identify',
+  },
+  {
+    key: '2',
+    imageSource: require('../../assets/images/paywallScreenImages/paywallIcon2.png'),
+    heading: 'Faster',
+    subheading: 'Process',
+  },
+  {
+    key: '3',
+    imageSource: require('../../assets/images/paywallScreenImages/paywallIcon1.png'),
+    heading: 'Detailed',
+    subheading: 'Plant care',
+  },
+];
 
 const PaywallScreen: React.FC<Props> = ({navigation}) => {
   const [selectedDuration, setSelectedDuration] = useState<string>('');
@@ -44,20 +65,17 @@ const PaywallScreen: React.FC<Props> = ({navigation}) => {
         </ImageBackground>
 
         <View style={styles.boxContainer}>
-          <Box
-            imageSource={require('../../assets/images/paywallScreenImages/paywallIcon1.png')}
-            heading="Unlimited"
-            subheading="Plant Identify"
-          />
-          <Box
-            imageSource={require('../../assets/images/paywallScreenImages/paywallIcon2.png')}
-            heading="Faster"
-            subheading="Process"
-          />
-          <Box
-            imageSource={require('../../assets/images/paywallScreenImages/paywallIcon1.png')}
-            heading="Detailed"
-            subheading="Plant care"
+          <FlatList
+            horizontal
+            data={data}
+            renderItem={({item}) => (
+              <Box
+                imageSource={item.imageSource}
+                heading={item.heading}
+                subheading={item.subheading}
+              />
+            )}
+            keyExtractor={item => item.key}
           />
         </View>
       </View>

@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,31 +18,31 @@ export const styles = StyleSheet.create({
   },
   heading: {
     fontFamily: 'Rubik',
-    fontSize: 28,
+    fontSize: width * 0.077,
     fontWeight: '400',
-    lineHeight: 33.18,
+    lineHeight: height * 0.091,
     letterSpacing: 0.07,
     textAlign: 'left',
     color: '#13231B',
-    bottom: '8%',
+    bottom: height * 0.04,
   },
   description: {
     fontFamily: 'Rubik',
-    fontSize: 16,
+    fontSize: width * 0.046,
     fontWeight: '400',
-    lineHeight: 22,
+    lineHeight: height * 0.062,
     letterSpacing: 0.07,
     textAlign: 'left',
     color: 'rgba(19, 35, 27, 0.7)',
-    bottom: '5%',
+    bottom: height * 0.05,
   },
   imageContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     width: '90%',
-    maxHeight: '70%',
-    bottom: '5%',
+    maxHeight: height * 0.6,
+    bottom: height * 0.05,
   },
   image: {
     width: '100%',
