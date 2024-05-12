@@ -36,7 +36,7 @@ const Onboarding1Screen: React.FC<Props> = ({currentPage, navigation}) => {
           />
         </View>
         <NavigationButton
-          title="Go to Screen 2"
+          title="Continue"
           navigation={navigation}
           navigateTo="Onboarding2"
           useRedux={true}

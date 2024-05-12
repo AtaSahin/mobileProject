@@ -4,7 +4,9 @@ import {useSelector} from 'react-redux';
 
 type Props = {};
 type RootState = {
-  currentPage: number;
+  page: {
+    currentPage: number;
+  };
 };
 
 const {width, height} = Dimensions.get('window');
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
 
 const CarouselDots: React.FC<Props> = () => {
   const currentPage: number = useSelector(
-    (state: RootState) => state.currentPage,
+    (state: RootState) => state.page.currentPage,
   );
   const totalPages: number = 3;
 

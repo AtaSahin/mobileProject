@@ -33,6 +33,7 @@ function AppNavigator() {
       <Stack.Screen name="Onboarding1" component={Onboarding1Screen} />
       <Stack.Screen name="Onboarding2" component={Onboarding2Screen} />
       <Stack.Screen name="Paywall" component={PaywallScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="HomePage" component={TabNavigator} />
     </Stack.Navigator>
   );
