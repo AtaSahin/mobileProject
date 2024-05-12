@@ -1,5 +1,6 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import categoriesReducer from '../actions/categoriesSlice';
+import questionsReducer from '../actions/questionsSlice';
 
 const initialState = {
   currentPage: 1,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     }
   },
   categories: categoriesReducer,
+  questions: questionsReducer,
 });
 
 const store = configureStore({
