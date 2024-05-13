@@ -38,23 +38,23 @@ export const styles = StyleSheet.create({
   },
   centeredContent: {
     width: '85%',
-    height: 80, // Use a fixed height instead of a percentage
+    height: 80,
     borderRadius: 12,
     backgroundColor: 'rgba(36, 32, 26, 1)',
-    flexDirection: 'row', // To align items horizontally
+    flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingLeft: 10, // Add left padding for text alignment
+    paddingLeft: 10,
   },
 
   buttonImage: {
-    width: 40, // Adjust as needed
-    height: 40, // Adjust as needed
-    marginRight: 10, // Add some space between image and text
+    width: 40,
+    height: 40,
+    marginRight: 10,
   },
 
   textContent: {
-    flex: 1, // Allow the text to take up the remaining space
+    flex: 1,
   },
 
   text: {

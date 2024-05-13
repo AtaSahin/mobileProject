@@ -6,6 +6,7 @@ import Onboarding1Screen from '../pages/Onboarding1/Onboarding1Screen';
 import PaywallScreen from '../pages/Paywall/PaywallScreen';
 import Onboarding2Screen from '../pages/Onboarding2/Onboarding2Screen';
 import GetStartedScreen from '../pages/GetStarted/GetStartedScreen';
+import {Image} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -15,12 +16,72 @@ function TabNavigator() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        tabBarActiveTintColor: 'rgba(40, 175, 110, 1)', // Aktif renk
       }}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Diagnose" component={HomeScreen} />
-      <Tab.Screen name="Test3" component={HomeScreen} />
-      <Tab.Screen name="My Garden" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={HomeScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../assets/images/homeScreenImages/homeIcon.png')}
+              style={{width: size, height: size, tintColor: color}}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Diagnose"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../assets/images/homeScreenImages/diagnoseIcon.png')}
+              style={{width: size, height: size, tintColor: color}}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name=" "
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../assets/images/homeScreenImages/scanIcon.png')}
+              style={{
+                width: size * 2.5,
+                height: size * 2.5,
+                bottom: '50%',
+              }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="My Garden"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../assets/images/homeScreenImages/myGardenIcon.png')}
+              style={{width: size, height: size, tintColor: color}}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Image
+              source={require('../assets/images/homeScreenImages/profileIcon.png')}
+              style={{width: size, height: size, tintColor: color}}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }

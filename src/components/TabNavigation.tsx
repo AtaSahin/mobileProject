@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 type TabNavigationProps = {
   activeTab: string;
@@ -18,21 +18,26 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
         alignItems: 'center',
       }}>
       <TouchableOpacity onPress={() => onChangeTab('test1')}>
-        <Text style={{color: activeTab === 'test1' ? 'blue' : 'black'}}>
+        <Text style={{color: activeTab === 'test1' ? 'green' : 'black'}}>
           Test 1
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onChangeTab('2')}>
-        <Text style={{color: activeTab === '2' ? 'blue' : 'black'}}>2</Text>
+        <Text style={{color: activeTab === '2' ? 'green' : 'black'}}>2</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onChangeTab('3')}>
-        <Text style={{color: activeTab === '3' ? 'blue' : 'black'}}>3</Text>
+        <Text style={{color: activeTab === '3' ? 'green' : 'black'}}>3</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onChangeTab('4')}>
-        <Text style={{color: activeTab === '4' ? 'blue' : 'black'}}>4</Text>
+        <Text style={{color: activeTab === '4' ? 'green' : 'black'}}>4</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onChangeTab('5')}>
-        <Text style={{color: activeTab === '5' ? 'blue' : 'black'}}>5</Text>
+        <Text
+          style={{
+            color: activeTab === '5' ? 'green' : 'black',
+          }}>
+          5
+        </Text>
       </TouchableOpacity>
     </View>
   );
