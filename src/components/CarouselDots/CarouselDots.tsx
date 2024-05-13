@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View} from 'react-native';
 import {useSelector} from 'react-redux';
+import styles from './CarouselDots.styles';
 
 type Props = {};
 type RootState = {
@@ -8,30 +9,6 @@ type RootState = {
     currentPage: number;
   };
 };
-
-const {width, height} = Dimensions.get('window');
-
-const marginTop = height * 0.05;
-
-const styles = StyleSheet.create({
-  dotsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: marginTop,
-    width: '100%',
-  },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: '#ccc',
-    marginHorizontal: 5,
-  },
-  activeDot: {
-    backgroundColor: '#007bff',
-  },
-});
 
 const CarouselDots: React.FC<Props> = () => {
   const currentPage: number = useSelector(
