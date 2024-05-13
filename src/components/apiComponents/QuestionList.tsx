@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    marginBottom: '40%',
+    marginBottom: '55%',
+
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
@@ -74,14 +75,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    aspectRatio: 3 / 2, // Adjust aspect ratio as needed
+    aspectRatio: 3 / 2,
     resizeMode: 'cover',
     borderRadius: 10,
   },
   textContainer: {
     position: 'absolute',
-    bottom: 10,
-    left: 10,
+    bottom: '0%',
+    left: '0%',
 
     padding: 10,
     borderRadius: 10,

@@ -1,32 +1,34 @@
-import React from 'react';
-import {TextInput, View} from 'react-native';
+import React, {useState} from 'react';
+import {View, TextInput, StyleSheet} from 'react-native';
 
 const SearchBar = () => {
+  const [text, setText] = useState('');
+
   return (
-    <View
-      style={{
-        width: '100%',
-        left: '5%',
-        right: '5%',
-        height: '11%',
-        borderRadius: 22,
-        backgroundColor: 'rgba(255, 255, 255, 0.88)',
-        paddingHorizontal: 10,
-        borderWidth: 0.2,
-        borderColor: 'rgba(60, 60, 67, 0.25)',
-        justifyContent: 'center',
-      }}>
+    <View style={styles.container}>
       <TextInput
-        style={{
-          fontSize: 16,
-          color: '#333',
-          fontFamily: 'Arial',
-        }}
-        placeholder="Search for plants"
-        placeholderTextColor="rgba(175, 175, 175, 1)"
+        style={styles.input}
+        placeholder="Enter your text here"
+        onChangeText={setText}
+        value={text}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  input: {
+    width: '80%',
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+  },
+});
 
 export default SearchBar;
