@@ -25,7 +25,7 @@ To get started with our project, follow these steps:
 
 1. Clone the repository from
 ```bash
- [https://github.com/AtaSahin/mobileProject.git](https://github.com/AtaSahin/mobileProject.git)
+https://github.com/AtaSahin/mobileProject.git
 ```
 2. Navigate into the cloned directory.
 3. Run `npm install` 
