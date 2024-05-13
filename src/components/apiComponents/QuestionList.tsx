@@ -1,6 +1,13 @@
-// QuestionList.js
 import React, {useEffect} from 'react';
-import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  FlatList,
+  Dimensions,
+} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {setQuestions} from '../../redux/actions/questionsSlice';
 
@@ -24,55 +31,66 @@ const QuestionList = () => {
     }
   };
 
+  const renderItem = ({item}) => (
+    <TouchableOpacity onPress={() => {}}>
+      <View style={styles.questionContainer}>
+        <Image source={{uri: item.image_uri}} style={styles.image} />
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>{item.title}</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+
   return (
-    <View style={styles.container}>
-      {questions.map((question, index) => (
-        <TouchableOpacity key={index} onPress={() => {}}>
-          <View style={styles.questionContainer}>
-            <Image source={{uri: question.image_uri}} style={styles.image} />
-            <View style={styles.textContainer}>
-              <Text style={styles.title}>{question.title}</Text>
-              <Text style={styles.subtitle}>{question.subtitle}</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      ))}
-    </View>
+    <FlatList
+      horizontal
+      data={questions}
+      renderItem={renderItem}
+      keyExtractor={(item, index) => index.toString()}
+      contentContainerStyle={styles.container}
+      showsHorizontalScrollIndicator={false}
+    />
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    left: '5%',
   },
   questionContainer: {
-    flexDirection: 'row',
+    marginRight: '1.5%',
+    flexDirection: 'column',
+    backgroundColor: '#fff',
     alignItems: 'center',
-    marginBottom: 20,
-    borderWidth: 1,
-    borderColor: '#ccc',
+    marginBottom: '40%',
     borderRadius: 10,
-    padding: 10,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 1,
+    width: Dimensions.get('window').width * 0.65,
   },
   image: {
-    width: 100,
-    height: 100,
+    width: '100%',
+    aspectRatio: 3 / 2, // Adjust aspect ratio as needed
     resizeMode: 'cover',
     borderRadius: 10,
   },
   textContainer: {
-    marginLeft: 10,
+    position: 'absolute',
+    bottom: 10,
+    left: 10,
+
+    padding: 10,
+    borderRadius: 10,
   },
   title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  subtitle: {
     fontSize: 16,
-    color: '#666',
+    fontWeight: '500',
+    color: '#fff',
+    fontFamily: 'Rubik',
   },
 });
 

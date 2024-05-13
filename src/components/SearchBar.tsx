@@ -1,17 +1,29 @@
 import React from 'react';
-import {View, TextInput} from 'react-native';
+import {TextInput, View} from 'react-native';
 
-type SearchBarProps = {
-  onChangeText: (text: string) => void;
-};
-
-const SearchBar: React.FC<SearchBarProps> = ({onChangeText}) => {
+const SearchBar = () => {
   return (
-    <View>
+    <View
+      style={{
+        width: '100%',
+        left: '5%',
+        right: '5%',
+        height: '11%',
+        borderRadius: 22,
+        backgroundColor: 'rgba(255, 255, 255, 0.88)',
+        paddingHorizontal: 10,
+        borderWidth: 0.2,
+        borderColor: 'rgba(60, 60, 67, 0.25)',
+        justifyContent: 'center',
+      }}>
       <TextInput
-        placeholder="Search..."
-        onChangeText={onChangeText}
-        style={{borderWidth: 1, borderColor: 'gray', padding: 10}}
+        style={{
+          fontSize: 16,
+          color: '#333',
+          fontFamily: 'Arial',
+        }}
+        placeholder="Search for plants"
+        placeholderTextColor="rgba(175, 175, 175, 1)"
       />
     </View>
   );
