@@ -8,16 +8,16 @@ import {
   Dimensions,
 } from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
-import {useDispatch} from 'react-redux'; // Import useDispatch hook
+import {useDispatch} from 'react-redux';
 import {changePage} from '../../redux/actions/actions';
 
 type ButtonProps = {
   title: string;
   navigation: NavigationProp<any>;
   navigateTo: string;
-  onPress?: () => void; // Optional custom onPress handler
+  onPress?: () => void;
   useRedux?: boolean;
-  pageNumber?: number; // Optional flag to enable Redux integration
+  pageNumber?: number;
 };
 
 const NavigationButton: React.FC<ButtonProps> = ({

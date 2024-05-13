@@ -12,7 +12,7 @@ type BoxProps = {
 const Box: React.FC<BoxProps> = ({imageSource, heading, subheading}) => {
   return (
     <View style={styles.box}>
-      <Image source={imageSource} style={styles.boxImage} />
+      <Image source={imageSource} style={styles.boxImage} testID="boxImage" />
       <View style={styles.textContainer}>
         <Text style={styles.boxHeading}>{heading}</Text>
         <Text style={styles.boxSubheading}>{subheading}</Text>
