@@ -1,7 +1,29 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Dimensions,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+} from 'react-native';
+
 const {width, height} = Dimensions.get('window');
 
-export const styles = StyleSheet.create({
+interface HomeScreenStyles {
+  container: ViewStyle;
+  heading: TextStyle;
+  header: ViewStyle;
+  categoryHeading: TextStyle;
+  backgroundImage: ImageStyle;
+  centeredContent: ViewStyle;
+  buttonImage: ImageStyle;
+  textContent: ViewStyle;
+  text: TextStyle;
+  searchBar: ViewStyle;
+  menuItems: ViewStyle;
+}
+
+export const styles = StyleSheet.create<HomeScreenStyles>({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -46,17 +68,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 10,
   },
-
   buttonImage: {
     width: 40,
     height: 40,
     marginRight: 10,
   },
-
   textContent: {
     flex: 1,
   },
-
   text: {
     fontSize: 15,
     color: 'rgba(255, 222, 156, 0.8)',

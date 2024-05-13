@@ -1,8 +1,27 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Dimensions,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
 
-export const styles = StyleSheet.create({
+interface Styles {
+  container: ViewStyle;
+  heading: TextStyle;
+  scrollContainer: ViewStyle;
+  description: TextStyle;
+  imageContainer: ViewStyle;
+  image: ImageStyle;
+  boxContainer: ViewStyle;
+  radioContainer: ViewStyle;
+  closeIcon: ViewStyle;
+  buttonContainer: ViewStyle;
+}
+
+export const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
@@ -26,7 +45,7 @@ export const styles = StyleSheet.create({
   description: {
     fontSize: height * 0.03,
     fontWeight: '300',
-    color: 'rgba(255, 255, 255, 0.7);',
+    color: 'rgba(255, 255, 255, 0.7)',
     marginTop: height * 0.033,
     letterSpacing: 0.07,
     top: height * 0.22,

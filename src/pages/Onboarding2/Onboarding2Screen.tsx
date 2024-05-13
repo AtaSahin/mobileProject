@@ -20,7 +20,7 @@ const Onboarding2Screen: React.FC<Props> = ({navigation}) => {
         source={require('../../assets/images/secondOnboardingImages/secondOnboardingBG.png')}
         style={styles.background}>
         <Text style={styles.heading}>
-          Get plant <Text style={{fontWeight: '900'}}>care guides</Text> {'\n'}{' '}
+          Get plant <Text style={{fontWeight: '900'}}>care guides</Text> {'\n'}
         </Text>
         <View style={styles.imageContainer}>
           <Image

@@ -1,10 +1,8 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {
   View,
-  TouchableOpacity,
   Text,
   ImageBackground,
-  TextInput,
   Image,
   KeyboardAvoidingView,
 } from 'react-native';
@@ -15,7 +13,7 @@ import {styles} from './HomeScreen.styles';
 const backgroundImage = require('../../assets/images/homeScreenImages/homeScreenBG.png');
 const mailIcon = require('../../assets/images/homeScreenImages/mailIcon.png');
 
-const HomeScreen = () => {
+const HomeScreen: FC = () => {
   return (
     <KeyboardAvoidingView style={{flex: 1}} behavior="padding">
       <View style={styles.container}>

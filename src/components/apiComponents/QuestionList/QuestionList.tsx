@@ -11,9 +11,17 @@ import {
 import {useSelector, useDispatch} from 'react-redux';
 import {setQuestions} from '../../../redux/actions/questionsSlice';
 
-const QuestionList = () => {
+interface Question {
+  id: number;
+  title: string;
+  image_uri: string;
+}
+
+const QuestionList: FC = () => {
   const dispatch = useDispatch();
-  const questions = useSelector(state => state.questions.list);
+  const questions: Question[] = useSelector(
+    (state: RootState) => state.questions.list,
+  );
 
   useEffect(() => {
     fetchQuestions();
@@ -31,7 +39,7 @@ const QuestionList = () => {
     }
   };
 
-  const renderItem = ({item}) => (
+  const renderItem = ({item}: {item: Question}) => (
     <TouchableOpacity onPress={() => {}}>
       <View style={styles.questionContainer}>
         <Image source={{uri: item.image_uri}} style={styles.image} />
@@ -47,7 +55,7 @@ const QuestionList = () => {
       horizontal
       data={questions}
       renderItem={renderItem}
-      keyExtractor={(item, index) => index.toString()}
+      keyExtractor={(item: Question, index: number) => index.toString()}
       contentContainerStyle={styles.container}
       showsHorizontalScrollIndicator={false}
     />

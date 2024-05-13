@@ -20,7 +20,15 @@ type RootStackParamList = {
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'HomePage'>;
 };
-const data = [
+
+interface PaywallItem {
+  key: string;
+  imageSource: any; // Change to appropriate type if needed
+  heading: string;
+  subheading: string;
+}
+
+const data: PaywallItem[] = [
   {
     key: '1',
     imageSource: require('../../assets/images/paywallScreenImages/paywallIcon1.png'),

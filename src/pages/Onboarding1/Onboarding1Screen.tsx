@@ -11,13 +11,25 @@ type RootStackParamList = {
   Onboarding2: undefined;
 };
 
-type Props = {
-  currentPage: number;
+interface DispatchProps {
   changePage: (pageNumber: number) => void;
+}
+
+type StateProps = {
+  currentPage: number;
+};
+
+type OwnProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Onboarding2'>;
 };
 
-const Onboarding1Screen: React.FC<Props> = ({currentPage, navigation}) => {
+type Props = StateProps & DispatchProps & OwnProps;
+
+const Onboarding1Screen: React.FC<Props> = ({
+  currentPage,
+  navigation,
+  changePage,
+}) => {
   useEffect(() => {}, [currentPage]);
 
   return (
@@ -48,11 +60,11 @@ const Onboarding1Screen: React.FC<Props> = ({currentPage, navigation}) => {
   );
 };
 
-const mapStateToProps = (state: {currentPage: number}) => ({
+const mapStateToProps = (state: {currentPage: number}): StateProps => ({
   currentPage: state.currentPage,
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps: DispatchProps = {
   changePage,
 };
 

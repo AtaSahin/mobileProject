@@ -1,8 +1,23 @@
-// categoriesSlice.js
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+interface Category {
+  id: string;
+  name: string;
+}
 
-export const fetchCategories = createAsyncThunk(
+interface CategoriesState {
+  data: Category[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+}
+
+const initialState: CategoriesState = {
+  data: [],
+  status: 'idle',
+  error: null,
+};
+
+export const fetchCategories = createAsyncThunk<Category[]>(
   'categories/fetchCategories',
   async () => {
     const response = await fetch(
@@ -12,12 +27,6 @@ export const fetchCategories = createAsyncThunk(
     return data.data;
   },
 );
-
-const initialState = {
-  data: [],
-  status: 'idle',
-  error: null,
-};
 
 const categoriesSlice = createSlice({
   name: 'categories',
@@ -34,11 +43,12 @@ const categoriesSlice = createSlice({
       })
       .addCase(fetchCategories.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message;
+        state.error = action.error.message || 'Something went wrong';
       });
   },
 });
 
-export const selectCategories = state => state.categories;
+export const selectCategories = (state: {categories: CategoriesState}) =>
+  state.categories;
 
 export default categoriesSlice.reducer;

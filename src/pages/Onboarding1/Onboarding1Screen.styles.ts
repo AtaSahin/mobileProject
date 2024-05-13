@@ -1,8 +1,22 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Dimensions,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
 
-export const styles = StyleSheet.create({
+interface Styles {
+  container: ViewStyle;
+  background: ViewStyle;
+  heading: TextStyle;
+  imageContainer: ViewStyle;
+  image: ImageStyle;
+}
+
+export const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
     justifyContent: 'center',

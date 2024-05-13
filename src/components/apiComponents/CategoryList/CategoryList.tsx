@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import {
   View,
   Text,
@@ -8,12 +8,21 @@ import {
   Dimensions,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+
 import {
   fetchCategories,
   selectCategories,
 } from '../../../redux/actions/categoriesSlice';
 
-const CategoryList = () => {
+interface Category {
+  id: number;
+  title: string;
+  image: {
+    url: string;
+  };
+}
+
+const CategoryList: FC = () => {
   const dispatch = useDispatch();
   const {data: categories, status, error} = useSelector(selectCategories);
 
@@ -21,7 +30,7 @@ const CategoryList = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  const renderCategoryItem = ({item}) => (
+  const renderCategoryItem = ({item}: {item: Category}) => (
     <View style={styles.itemContainer}>
       <Image source={{uri: item.image.url}} style={styles.image} />
       <Text style={styles.title}>{item.title}</Text>
