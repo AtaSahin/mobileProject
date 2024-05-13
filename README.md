@@ -21,7 +21,6 @@ src
 
 
 ## 🚀 To Run the App
-To get started with our project, follow these steps:
 
 1. Clone the repository from
 ```bash
