@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {View, Text, ImageBackground, Image} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import NavigationButton from '../../components/NavigationButton';
+import NavigationButton from '../../components/NavigationButton/NavigationButton';
 import {styles} from './Onboarding1Screen.styles';
 import {changePage} from '../../redux/actions/actions';
-import CarouselDots from '../../components/CarouselDots';
+import CarouselDots from '../../components/CarouselDots/CarouselDots';
 
 type RootStackParamList = {
   Onboarding2: undefined;

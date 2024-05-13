@@ -9,7 +9,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {setQuestions} from '../../redux/actions/questionsSlice';
+import {setQuestions} from '../../../redux/actions/questionsSlice';
 
 const QuestionList = () => {
   const dispatch = useDispatch();

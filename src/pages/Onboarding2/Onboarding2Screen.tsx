@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, ImageBackground, Image} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import NavigationButton from '../../components/NavigationButton';
+import NavigationButton from '../../components/NavigationButton/NavigationButton';
 import {styles} from './Onboarding2Screen.styles';
-import CarouselDots from '../../components/CarouselDots';
+import CarouselDots from '../../components/CarouselDots/CarouselDots';
 
 type RootStackParamList = {
   Paywall: undefined;

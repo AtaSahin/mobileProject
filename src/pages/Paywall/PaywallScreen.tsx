@@ -8,10 +8,10 @@ import {
   FlatList,
 } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import NavigationButton from '../../components/NavigationButton';
+import NavigationButton from '../../components/NavigationButton/NavigationButton';
 import {styles} from './PaywallScreen.styles';
-import Box from '../../components/Box';
-import RadioButton from '../../components/RadioButton';
+import Box from '../../components/Box/Box';
+import RadioButton from '../../components/RadioButton/RadioButton';
 
 type RootStackParamList = {
   HomePage: undefined;

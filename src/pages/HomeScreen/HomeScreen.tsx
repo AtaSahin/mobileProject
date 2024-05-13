@@ -8,8 +8,8 @@ import {
   Image,
   KeyboardAvoidingView,
 } from 'react-native';
-import QuestionList from '../../components/apiComponents/QuestionList';
-import CategoryList from '../../components/apiComponents/CategoryList';
+import QuestionList from '../../components/apiComponents/QuestionList/QuestionList';
+import CategoryList from '../../components/apiComponents/CategoryList/CategoryList';
 import {styles} from './HomeScreen.styles';
 
 const backgroundImage = require('../../assets/images/homeScreenImages/homeScreenBG.png');

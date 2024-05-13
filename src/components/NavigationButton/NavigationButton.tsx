@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
 import {useDispatch} from 'react-redux'; // Import useDispatch hook
-import {changePage} from '../redux/actions/actions';
+import {changePage} from '../../redux/actions/actions';
 
 type ButtonProps = {
   title: string;

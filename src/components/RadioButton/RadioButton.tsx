@@ -26,6 +26,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
 }) => {
   return (
     <TouchableOpacity
+      testID="radioButton"
       style={[styles.radioButton, selected && styles.selectedButton]}
       onPress={onPress}>
       <View

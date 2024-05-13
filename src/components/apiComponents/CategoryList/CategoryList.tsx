@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {
   fetchCategories,
   selectCategories,
-} from '../../redux/actions/categoriesSlice';
+} from '../../../redux/actions/categoriesSlice';
 
 const CategoryList = () => {
   const dispatch = useDispatch();
