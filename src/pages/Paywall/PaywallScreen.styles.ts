@@ -19,6 +19,7 @@ interface Styles {
   radioContainer: ViewStyle;
   closeIcon: ViewStyle;
   buttonContainer: ViewStyle;
+  trialText: TextStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
@@ -91,5 +92,12 @@ export const styles = StyleSheet.create<Styles>({
     paddingBottom: 20,
     top: height * 0.15,
     right: width * 0.5,
+  },
+  trialText: {
+    fontSize: 12,
+    color: 'rgba(255, 255, 255, 0.52)',
+    textAlign: 'center',
+    top: height * 0.06,
+    width: width * 0.85,
   },
 });

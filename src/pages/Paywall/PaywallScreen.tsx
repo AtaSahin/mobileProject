@@ -23,7 +23,7 @@ type Props = {
 
 interface PaywallItem {
   key: string;
-  imageSource: any; // Change to appropriate type if needed
+  imageSource: any;
   heading: string;
   subheading: string;
 }
@@ -112,6 +112,12 @@ const PaywallScreen: React.FC<Props> = ({navigation}) => {
           navigateTo="HomePage"
         />
       </View>
+      <Text style={styles.trialText}>
+        After the 3-day free trial period you will be charged $XX.XX per year.
+        Cancel before trial ends. Subscription is auto-renewable.{'\n'}
+        {'\n'}
+        Terms • Privacy • Restore
+      </Text>
     </View>
   );
 };
